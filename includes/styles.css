@@ -1,0 +1,444 @@
+/* Responsive Styles für DB Backup */
+
+/* Allgemeine Styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Install & Login Seiten */
+.auth-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.auth-container .ui.segment {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+
+.language-selector-wrapper {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+/* Dashboard */
+.dashboard-container {
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.dashboard-header {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.dashboard-header .ui.grid {
+    margin: 0;
+}
+
+.dashboard-header .ui.header {
+    margin: 0;
+}
+
+/* Database List Style */
+.database-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.database-list-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 1.5rem;
+}
+
+.database-list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.database-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.database-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.database-name {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+.database-name .icon {
+    color: #2185d0;
+}
+
+.database-meta {
+    color: rgba(0,0,0,0.6);
+    font-size: 0.9em;
+    padding: 0.3em 0.8em;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.database-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95em;
+}
+
+.detail-item .icon {
+    color: rgba(0,0,0,0.4);
+    font-size: 0.9em;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: rgba(0,0,0,0.7);
+    margin-right: 0.3em;
+}
+
+.detail-value {
+    color: rgba(0,0,0,0.9);
+}
+
+.database-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.database-actions .ui.button {
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.password-display {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+}
+
+/* Mobile Text Hiding */
+.hide-mobile {
+    display: inline;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+    
+    .show-mobile {
+        display: inline;
+    }
+    
+    .language-selector {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .auth-page {
+        padding: 0.5rem;
+    }
+    
+    .auth-container {
+        max-width: 100%;
+    }
+    
+    .dashboard-container {
+        padding: 0.5rem;
+    }
+    
+    .dashboard-header {
+        padding: 1rem;
+    }
+    
+    .dashboard-header .ui.stackable.grid > .column {
+        padding: 0.5rem 0;
+    }
+    
+    .dashboard-header .ui.stackable.grid > .column.right.aligned {
+        text-align: left !important;
+    }
+    
+    .dashboard-header .ui.stackable.grid > .column:last-child {
+        margin-top: 0.5rem;
+    }
+    
+    .database-list-item {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+    
+    .database-info {
+        margin-bottom: 1rem;
+    }
+    
+    .database-header {
+        margin-bottom: 0.75rem;
+    }
+    
+    .database-name {
+        font-size: 1.1em;
+    }
+    
+    .database-details {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .detail-item {
+        flex-wrap: wrap;
+    }
+    
+    .database-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .database-actions .ui.button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .ui.modal {
+        margin: 0 !important;
+        width: 100% !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+    
+    .ui.modal > .header {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .ui.modal > .content {
+        padding: 1rem;
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+    }
+    
+    .ui.modal > .actions {
+        padding: 1rem;
+        border-top: 1px solid rgba(34,36,38,.1);
+    }
+    
+    .ui.modal > .actions .button {
+        margin: 0.25rem;
+    }
+    
+    .ui.two.fields {
+        flex-direction: column;
+    }
+    
+    .ui.two.fields > .field {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container .ui.segment {
+        padding: 1.5rem 1rem;
+    }
+    
+    .dashboard-header .ui.header {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-header .ui.header .sub.header {
+        font-size: 0.9rem;
+    }
+    
+    .language-selector-wrapper {
+        margin-bottom: 1rem;
+    }
+    
+    .ui.button {
+        font-size: 0.9rem;
+        padding: 0.7em 1em;
+    }
+    
+    .database-list-item {
+        padding: 0.75rem;
+    }
+    
+    .database-name {
+        font-size: 1em;
+    }
+    
+    .database-details {
+        font-size: 0.9em;
+    }
+    
+    .detail-item {
+        gap: 0.3rem;
+    }
+    
+    .database-actions .ui.button {
+        min-width: auto;
+        font-size: 0.85rem;
+        padding: 0.6em 1em;
+    }
+}
+
+/* Message Styles */
+.ui.message {
+    margin-bottom: 1.5rem;
+}
+
+.ui.message .close.icon {
+    cursor: pointer;
+}
+
+/* Modal Verbesserungen */
+.ui.modal .content {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Button Verbesserungen */
+.ui.button {
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.ui.button:hover {
+    transform: translateY(-1px);
+}
+
+.ui.button .icon {
+    margin: 0 0.5em 0 0;
+}
+
+.ui.button:not(.icon) .icon:only-child {
+    margin: 0;
+}
+
+/* Card Verbesserungen */
+.ui.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 0;
+}
+
+.ui.card .content {
+    padding: 1em;
+}
+
+.ui.card .header {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.ui.card .meta {
+    color: rgba(0,0,0,.4);
+    font-size: 0.9em;
+}
+
+/* Placeholder Verbesserungen */
+.ui.placeholder.segment {
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.ui.placeholder.segment .ui.icon.header {
+    margin-bottom: 1.5rem;
+}
+
+.ui.placeholder.segment .ui.button {
+    margin-top: 1rem;
+}
+
+/* Form Verbesserungen */
+.ui.form .field > label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Grid Verbesserungen */
+.ui.stackable.grid {
+    margin: 0;
+}
+
+.ui.stackable.grid > .column {
+    padding: 0.75rem;
+}
+
+/* Clearing Segment Verbesserungen */
+.ui.clearing.segment {
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+}
+
+.ui.clearing.segment .ui.header {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .ui.clearing.segment {
+        padding: 1rem;
+    }
+    
+    .ui.clearing.segment .ui.header {
+        float: none !important;
+        margin-bottom: 1rem;
+    }
+    
+    .ui.clearing.segment .ui.button {
+        float: none !important;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+

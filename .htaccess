@@ -1,0 +1,26 @@
+# Schutz für Config-Verzeichnis
+<DirectoryMatch "^/.*/config/">
+    Order allow,deny
+    Deny from all
+</DirectoryMatch>
+
+# Schutz für Backup-Verzeichnis
+<DirectoryMatch "^/.*/backups/">
+    Order allow,deny
+    Deny from all
+</DirectoryMatch>
+
+# Schutz für Includes-Verzeichnis
+<DirectoryMatch "^/.*/includes/">
+    Order allow,deny
+    Deny from all
+</DirectoryMatch>
+
+# PHP-Dateien in geschützten Verzeichnissen blockieren
+<FilesMatch "^.*\.php$">
+    <If "%{REQUEST_URI} =~ m#/(config|includes|backups)/#">
+        Order allow,deny
+        Deny from all
+    </If>
+</FilesMatch>
+
